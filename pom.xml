@@ -1,0 +1,62 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.jzy3d</groupId>
+	<artifactId>vecmath</artifactId>
+	<version>1.6.2</version>
+	<name>A clone of Javax Vecmath package</name>
+
+
+	<build>
+		<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>3.0</version>
+					<configuration>
+						<source>1.8</source>
+						<target>1.8</target>
+					</configuration>
+				</plugin>
+
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-source-plugin</artifactId>
+					<executions>
+						<execution>
+							<id>attach-sources</id>
+							<phase>deploy</phase>
+							<goals>
+								<goal>jar</goal>
+							</goals>
+						</execution>
+					</executions>
+				</plugin>
+		 </plugins>
+
+
+		<extensions>
+			<extension>
+				<groupId>org.apache.maven.wagon</groupId>
+				<artifactId>wagon-ftp</artifactId>
+				<version>2.10</version>
+			</extension>
+		</extensions>
+	</build>
+
+	<distributionManagement>
+		<repository>
+			<id>jzy3d-ftp</id>
+			<name>Jzy3d Maven Folder</name>
+			<url>ftp://ftp.cluster013.ovh.net/maven/releases</url>
+		</repository>
+		<snapshotRepository>
+			<id>jzy3d-ftp</id>
+			<name>Jzy3d Maven Folder SNAPSHOTS</name>
+			<url>ftp://ftp.cluster013.ovh.net/maven/snapshots</url>
+		</snapshotRepository>
+	</distributionManagement>
+
+</project>
